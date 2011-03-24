@@ -1,0 +1,34 @@
+﻿
+
+- (1..81).each do |x|
+    %div.b{:id=> x.to_s,:style=>"left: #{((x-1)%9)*52+50}px;  top: #{((x-1)/9)*52+50}px;"} 
+        - if @@m[x-1].length==1
+            %h1{:onclick=>"window.location = '/reset/#{x}'"}
+                = @@m[x-1]
+        - else
+            - (1..9).each do |xx|
+                - if @@m[x-1].include?(xx.to_s)
+                    %div.l{:style=>"left: #{((xx-1)%3)*17+0}px;  top: #{((xx-1)/3)*17+0}px; ",
+                    :onclick=>"window.location = '/set/#{x}/#{xx}'"}
+                        =xx 
+
+
+%div=  @@s
+
+:css
+    div.b {
+        position: absolute; 
+        border: 2px solid;
+        width: 51px;
+        height: 51px;
+        text-align: center;
+    }
+    div.l {
+        position: absolute; 
+        border: 1px solid;
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        font-size: 0.8;
+    }
+
