@@ -1,6 +1,6 @@
 This is an application that uses Sinatra gem. 
 
-You can run it by "ruby dnm.rb" on command line
+You can run it by "ruby susohe.rb" on command line
 
 After server start you can use application In your browser at "localhost:4567" address
 
