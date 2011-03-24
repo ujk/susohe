@@ -1,6 +1,5 @@
 ﻿require "sinatra"
 
-require "./fonks.rb"
 
 @@m = []
 @@s = ""
@@ -31,7 +30,7 @@ def check
                     col_box = boxes.detect {|v| v.include?(col.to_s)}
                     if singles.detect {|v| v =~ (Regexp.new(row.to_s + "[1-9]" + x)) or
                         v =~ Regexp.new("[1-9]" + col.to_s + x)}   # sütunda aynısı varsa
-                        @@s = "değer #{x} mat #{singles}"
+                        #@@s = "değer #{x} mat #{singles}"
                         @@m[(row-1)*9+(col-1)].delete! x        # o sayıyı sil
                     elsif singles.detect {|v| v =~ (Regexp.new("[" + row_box + "]" + "[" + col_box + "]" + x))}
                         @@m[(row-1)*9+(col-1)].delete! x        # o sayıyı sil                        
