@@ -1,6 +1,5 @@
 ﻿require "sinatra"
 
-require "./fonks.rb"
 
 @@m = []
 @@s = ""
